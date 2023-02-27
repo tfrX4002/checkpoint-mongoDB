@@ -1,0 +1,25 @@
+//lancer le shell
+mongo
+
+//créer la base de données (si elle n'existe pas)
+use contact
+
+//créer la collection contactList
+db.createCollection('contactList')
+
+//ajouter des documents
+contact.contactList.insertMany(
+    [
+            Nom : Ben Lahmer, Prénom : Fares, E-mail : fares@gmail.com, âge : 26 ans
+            Nom : Kefi, Prénom : Seif, Email : kefi@gmail.com, âge : 15 ans
+            Nom : Fatnassi, Prénom : Sarra, Email : sarra.f@gmail.com, âge : 40 ans
+            Nom : Ben Yahia, Prénom : Rym, âge : 4 ans
+            Nom : Chérif, Prénom : Sami, âge : 3 ans
+    ]
+)
+
+//tout afficher
+contact.contactList.find({})
+
+//afficher un seul
+contact.contactList.findOne({_id : 'idDuContact'})
